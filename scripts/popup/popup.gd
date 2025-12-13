@@ -1,13 +1,16 @@
 extends Node2D
 
+signal popup_btn_close
+signal popup_btn_accept
 
-@onready var close_btn = $CloseBtn
+@onready var close_btn = $PopupTemplate/CloseBtn
+@onready var accept_btn = $PopupTemplate/AcceptBtn
 @onready var popup = $"."
 
-func _killme() -> void:
-	popup.visible = false
+func _on_close() -> void:
+	emit_signal("popup_btn_close")
+	queue_free()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	close_btn.connect("pressed", _killme)
+func _ready() -> void:
+	close_btn.connect("pressed", _on_close)
+	accept_btn.connect("pressed", func() : emit_signal("popup_btn_accept"))
