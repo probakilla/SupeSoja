@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://chwvegeuayqnf"]
+[gd_scene load_steps=10 format=3 uid="uid://chwvegeuayqnf"]
 
 [ext_resource type="Script" uid="uid://b0h3pklmjhwy2" path="res://scripts/popup/popup.gd" id="1_2eskn"]
 [ext_resource type="Texture2D" uid="uid://7f6rhv7qek66" path="res://assets/images/popup/popup_template.png" id="2_cv86x"]
+[ext_resource type="Script" uid="uid://7r7c5lthtg6k" path="res://scripts/popup/close_btn.gd" id="3_lva56"]
+[ext_resource type="Script" uid="uid://ojcd3hlkjd3c" path="res://scripts/popup/accept_btn.gd" id="4_7cpf1"]
 
 [sub_resource type="Animation" id="Animation_cv86x"]
 resource_name = "pop"
@@ -9,7 +11,7 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/PopupTemplate:scale")
+tracks/0/path = NodePath("AnimationPlayer/Area2D/PopupTemplate:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +26,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/PopupTemplate:scale")
+tracks/0/path = NodePath("AnimationPlayer/Area2D/PopupTemplate:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -40,6 +42,11 @@ _data = {
 &"pop": SubResource("Animation_cv86x")
 }
 
+[sub_resource type="Theme" id="Theme_7cpf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cpf1"]
+size = Vector2(198.5, 99)
+
 [node name="Popup1" type="Node2D"]
 script = ExtResource("1_2eskn")
 
@@ -49,42 +56,65 @@ libraries = {
 }
 autoplay = "pop"
 
-[node name="PopupTemplate" type="Sprite2D" parent="AnimationPlayer"]
+[node name="Area2D" type="Area2D" parent="AnimationPlayer"]
+
+[node name="Button" type="Button" parent="AnimationPlayer/Area2D"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(24.883957, 12.358651)
+theme = SubResource("Theme_7cpf1")
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
+
+[node name="PopupTemplate" type="Sprite2D" parent="AnimationPlayer/Area2D"]
 position = Vector2(100, 50)
 texture = ExtResource("2_cv86x")
 
-[node name="CloseBtn" type="Button" parent="AnimationPlayer/PopupTemplate"]
-offset_left = 87.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = -37.0
+[node name="CloseBtn" type="Button" parent="AnimationPlayer/Area2D"]
+offset_left = 187.0
+offset_right = 200.0
+offset_bottom = 13.0
 flat = true
+script = ExtResource("3_lva56")
 
-[node name="Label" type="Label" parent="AnimationPlayer/PopupTemplate"]
-offset_left = -97.0
-offset_top = -51.0
-offset_right = 91.0
-offset_bottom = -28.0
+[node name="Label" type="Label" parent="AnimationPlayer/Area2D"]
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 191.0
+offset_bottom = 22.0
 theme_override_font_sizes/font_size = 10
 text = "Super new stuff"
 
-[node name="Label2" type="Label" parent="AnimationPlayer/PopupTemplate"]
-offset_left = -97.0
-offset_top = -34.0
-offset_right = 97.0
-offset_bottom = 18.0
+[node name="Label2" type="Label" parent="AnimationPlayer/Area2D"]
+offset_left = 3.0
+offset_top = 16.0
+offset_right = 197.0
+offset_bottom = 68.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "CLICK HERE TO CLAIM 
 YOUR COOL FREE STUFF"
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/PopupTemplate"]
-offset_left = -52.0
-offset_top = 28.0
-offset_right = 51.0
-offset_bottom = 47.0
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/Area2D"]
+offset_left = 48.0
+offset_top = 78.0
+offset_right = 151.0
+offset_bottom = 97.0
 color = Color(0.99338144, 0, 0.21701092, 1)
 
-[node name="Label" type="Label" parent="AnimationPlayer/PopupTemplate/ColorRect"]
+[node name="Label" type="Label" parent="AnimationPlayer/Area2D/ColorRect"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = -2.0
@@ -92,9 +122,14 @@ offset_right = 99.0
 offset_bottom = 21.0
 text = "CLICKKKKKK"
 
-[node name="AcceptBtn" type="Button" parent="AnimationPlayer/PopupTemplate"]
-offset_left = -52.0
-offset_top = 28.0
-offset_right = 51.0
-offset_bottom = 47.0
+[node name="AcceptBtn" type="Button" parent="AnimationPlayer/Area2D"]
+offset_left = 48.0
+offset_top = 78.0
+offset_right = 151.0
+offset_bottom = 97.0
 flat = true
+script = ExtResource("4_7cpf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Area2D"]
+position = Vector2(99.75, 49.5)
+shape = SubResource("RectangleShape2D_7cpf1")
