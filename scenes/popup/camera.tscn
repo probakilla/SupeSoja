@@ -118,3 +118,4 @@ scale = Vector2(14.018282, 17.550564)
 text = "Start game
 "
 script = ExtResource("2_dlwdm")
+[node name="PopupScreen" parent="." instance=ExtResource("1_u5kg4")]

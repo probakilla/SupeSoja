@@ -47,7 +47,6 @@ _data = {
 size = Vector2(198.5, 99)
 
 [sub_resource type="Theme" id="Theme_7cpf1"]
-
 [node name="Popup1" type="Node2D"]
 script = ExtResource("1_2eskn")
 
