@@ -3,9 +3,8 @@ extends Node2D
 signal popup_btn_close
 signal popup_btn_accept
 
-@onready var close_btn = $PopupTemplate/CloseBtn
-@onready var accept_btn = $PopupTemplate/AcceptBtn
-@onready var popup = $"."
+@onready var close_btn = $AnimationPlayer/PopupTemplate/CloseBtn
+@onready var accept_btn = $AnimationPlayer/PopupTemplate/AcceptBtn
 
 func _on_close() -> void:
 	emit_signal("popup_btn_close")
