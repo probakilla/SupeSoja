@@ -5,7 +5,7 @@ extends Node2D
 var mail_checked = false
 var recherche_checked = false
 
-func _on_imprimer_quest_toggle() -> void:
+func on_imprimer_quest_toggle() -> void:
 	if(mail_checked == true):
 		imprimer_checkBox.button_pressed = false
 		mail_checked = false
