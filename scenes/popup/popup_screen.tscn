@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmhi4hcjvd5o6"]
 
+[ext_resource type="Script" uid="uid://ddl4l1xk6fla4" path="res://scripts/popup/popup_screen.gd" id="1_8w862"]
 [ext_resource type="Texture2D" uid="uid://bat1jkfy182m4" path="res://assets/images/popup/browser_screen_tmp.png" id="1_gl3ya"]
-[ext_resource type="PackedScene" uid="uid://chwvegeuayqnf" path="res://scenes/popup/popup.tscn" id="2_d136f"]
 
 [node name="PopupScreen" type="Node2D"]
+script = ExtResource("1_8w862")
 
 [node name="BrowserScreenTmp" type="Sprite2D" parent="."]
 position = Vector2(576.25, 324.99997)
 scale = Vector2(0.59963477, 0.61290324)
 texture = ExtResource("1_gl3ya")
-
-[node name="Popup" parent="." instance=ExtResource("2_d136f")]
-position = Vector2(325, 93)
