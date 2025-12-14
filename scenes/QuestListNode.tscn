@@ -58,7 +58,7 @@ text = "Fais une recherche web"
 visible = false
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 layout_mode = 2
-text = "Libère de l'espace disque"
+text = "Libère de l'espace sur serveur"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
