@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dka1q34xgtqt5"]
+[gd_scene load_steps=8 format=3 uid="uid://dka1q34xgtqt5"]
 
 [ext_resource type="Script" uid="uid://cgjjcfk8t5ouv" path="res://scripts/browser/browser.gd" id="1_iwrt6"]
 [ext_resource type="Texture2D" uid="uid://c4hisp57q4lhy" path="res://assets/images/Browser/browser.png" id="3_mtvo7"]
 [ext_resource type="Texture2D" uid="uid://p05sngnxr5y2" path="res://assets/images/Browser/block.png" id="3_ynpif"]
 [ext_resource type="Texture2D" uid="uid://o8jyysw784bb" path="res://assets/images/Browser/search_bar.jpeg" id="4_ynpif"]
+[ext_resource type="Script" uid="uid://xn4nkctybigw" path="res://scripts/browser/button_understand.gd" id="5_dr6n0"]
 [ext_resource type="Script" uid="uid://d3b66boiuecuy" path="res://scripts/browser/browser_game_manager.gd" id="5_gwjmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwjmo"]
@@ -24,6 +25,32 @@ shape = SubResource("RectangleShape2D_gwjmo")
 [node name="Browser" type="Sprite2D" parent="Area2D"]
 scale = Vector2(0.832372, 0.8333333)
 texture = ExtResource("3_mtvo7")
+
+[node name="Understand" type="Sprite2D" parent="Area2D/Browser"]
+visible = false
+position = Vector2(-6.1035156e-05, 284.40033)
+scale = Vector2(0.4041227, 0.27670264)
+texture = ExtResource("3_ynpif")
+
+[node name="Label2" type="Label" parent="Area2D/Browser/Understand"]
+offset_left = -526.7815
+offset_top = -142.48853
+offset_right = 525.7053
+offset_bottom = 136.74414
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "J'ai compris"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonUnderstand" type="Button" parent="Area2D/Browser/Understand"]
+offset_left = -493.48877
+offset_top = -147.45071
+offset_right = -485.48877
+offset_bottom = -139.45071
+scale = Vector2(125.655815, 36.233635)
+flat = true
+script = ExtResource("5_dr6n0")
 
 [node name="Block" type="Sprite2D" parent="Area2D/Browser"]
 position = Vector2(-216.85016, 120.599976)
@@ -106,9 +133,9 @@ uppercase = true
 [node name="WrongChoice" type="Label" parent="Area2D/Browser"]
 visible = false
 offset_left = -569.4569
-offset_top = -387.6
+offset_top = -428.40002
 offset_right = 581.5431
-offset_bottom = 259.4
+offset_bottom = 218.59998
 theme_override_colors/font_color = Color(0.5660935, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Mauvais CHOIX"
@@ -119,12 +146,25 @@ uppercase = true
 [node name="GoodChoice" type="Label" parent="Area2D/Browser"]
 visible = false
 offset_left = -577.86664
-offset_top = -392.4
+offset_top = -430.7998
 offset_right = 574.13336
-offset_bottom = 255.6
+offset_bottom = 217.2002
 theme_override_colors/font_color = Color(8.471012e-06, 0.73971415, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Bon Choix"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Explanation" type="Label" parent="Area2D/Browser"]
+visible = false
+offset_left = -611.50543
+offset_top = -39.600006
+offset_right = -571.50543
+offset_bottom = -16.600006
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "This is an awesome text
+This is an awesome text
+This is an awesome text
+This is an awesome text"
