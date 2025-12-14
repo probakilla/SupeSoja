@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var game_manager = %GameManager
+
 @onready var start_btn = $DesktopAnimator/StartBtn/Button
 @onready var button_background = $DesktopAnimator/StartBtn
 @onready var desktop_anim = $DesktopAnimator
@@ -13,7 +15,6 @@ var flowerpot_lvl1 = preload("res://assets/images/Plante_niveau_1.png")
 var flowerpot_lvl2 = preload("res://assets/images/Plante_niveau_2.png")
 var flowerpot_lvl3 = preload("res://assets/images/plante_niveau_3.png")
 
-var popup_game_ongoing = false
 
 var completion = {
 	"email": false
@@ -45,6 +46,7 @@ func _start() -> void:
 	await desktop_anim.animation_finished
 	desktop_anim.play("twinkle")
 	mail_btn.disabled = false
+	game_manager.game_started = true
 
 
 func _on_popup_game_finished() -> void:
@@ -53,15 +55,15 @@ func _on_popup_game_finished() -> void:
 	_refresh_flowerpot()
 
 func _start_popup_game() -> void:
-	if popup_game_ongoing:
+	if game_manager.popup_game_started:
 		return
 	
-	popup_game_ongoing = true
+	game_manager.popup_game_ongoing = true
 	button_animator.play("click")
 	var popup_minigame = popup_screen.instantiate()
 	add_child(popup_minigame)
 	popup_minigame.game_ended.connect(_on_popup_game_finished)
-	popup_game_ongoing = false
+	game_manager.popup_game_ongoing = false
 
 
 func _ready() -> void:
