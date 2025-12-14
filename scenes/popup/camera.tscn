@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dqheh86xe4g68"]
+[gd_scene load_steps=46 format=3 uid="uid://dqheh86xe4g68"]
 
 [ext_resource type="Texture2D" uid="uid://bg8sg3y3yi3p3" path="res://assets/images/desktop.png" id="1_hfh83"]
 [ext_resource type="Script" uid="uid://v6jtx5sijoc1" path="res://scripts/game_manager.gd" id="1_ubpei"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://dedepktstx2yt" path="res://scenes/popup/start_mails.gd" id="7_klxan"]
 [ext_resource type="Texture2D" uid="uid://diqtydm1so6u0" path="res://assets/images/button.jpg" id="7_ux65g"]
 [ext_resource type="PackedScene" uid="uid://bcbt61p5bxiep" path="res://scenes/QuestListNode.tscn" id="7_ytgl2"]
+[ext_resource type="Texture2D" uid="uid://d0lin4e5xvtkt" path="res://assets/images/ie.png" id="12_3phci"]
+[ext_resource type="Script" uid="uid://bw7apd83ss2ss" path="res://scripts/internet_btn.gd" id="13_h40tr"]
 
 [sub_resource type="Animation" id="Animation_diie0"]
 length = 0.001
@@ -330,8 +332,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qpucb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h40tr"]
+size = Vector2(705.72473, 679.23315)
+
 [node name="Main" type="Node2D"]
-visible = false
 
 [node name="GameManager" type="Control" parent="."]
 unique_name_in_owner = true
@@ -339,6 +343,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.24428706, 1.2934353)
 script = ExtResource("1_ubpei")
 
 [node name="CameraAnimation" type="AnimationPlayer" parent="."]
@@ -398,13 +403,6 @@ position = Vector2(-570.75085, -284.16663)
 scale = Vector2(2.513616, 2.5136158)
 texture = ExtResource("6_2h2f1")
 
-[node name="Label" type="Label" parent="Main/DesktopAnimator/Desktop/Background/Mails"]
-offset_left = -19.946404
-offset_top = 21.531845
-offset_right = 22.053596
-offset_bottom = 44.531845
-text = "mails"
-
 [node name="MailBtn" type="Button" parent="Main/DesktopAnimator/Desktop/Background/Mails"]
 offset_left = -33.82003
 offset_top = -27.688238
@@ -441,6 +439,38 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_qpucb")
 flat = true
 script = ExtResource("7_klxan")
 
+[node name="Label2" type="Label" parent="Main/DesktopAnimator/Desktop/Background/Mails"]
+offset_left = -19.964464
+offset_top = 22.621346
+offset_right = 282.2213
+offset_bottom = 237.6213
+scale = Vector2(0.20525056, 0.21462741)
+theme_override_font_sizes/font_size = 77
+text = "mails"
+
+[node name="Browser" type="Sprite2D" parent="Main/DesktopAnimator/Desktop/Background"]
+position = Vector2(-565.25183, -59.48472)
+scale = Vector2(0.5337376, 0.5043553)
+texture = ExtResource("12_3phci")
+
+[node name="Label" type="Label" parent="Main/DesktopAnimator/Desktop/Background/Browser"]
+offset_left = -144.7183
+offset_top = 150.0065
+offset_right = 157.46748
+offset_bottom = 365.0065
+theme_override_font_sizes/font_size = 77
+text = "internet
+"
+
+[node name="InternetBtn" type="Button" parent="Main/DesktopAnimator/Desktop/Background/Browser"]
+offset_left = -187.6704
+offset_top = -165.54366
+offset_right = -179.6704
+offset_bottom = -157.54366
+scale = Vector2(48.203934, 53.822746)
+flat = true
+script = ExtResource("13_h40tr")
+
 [node name="Flowerpot" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
 position = Vector2(1353.8462, 61.538464)
 texture = ExtResource("3_xkep2")
@@ -454,6 +484,14 @@ texture = ExtResource("4_1mnu2")
 position = Vector2(747.10425, 495.60388)
 rotation = -0.080512166
 scale = Vector2(1.0900041, 1.0434723)
+
+[node name="Screen" type="Area2D" parent="Main/DesktopAnimator/Desktop"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/DesktopAnimator/Desktop/Screen"]
+position = Vector2(120.18555, -59.737793)
+rotation = -0.01608396
+scale = Vector2(2.3323207, 1.5306869)
+shape = SubResource("RectangleShape2D_h40tr")
 
 [node name="StartBtn" type="Sprite2D" parent="Main/DesktopAnimator"]
 position = Vector2(602.00006, 303)

@@ -5,18 +5,14 @@ extends Node
 @onready var button_one = $ChoiceButon1/Button
 @onready var button_two = $ChoiceButon1/ChoiceButon2/Button
 @onready var button_three = $ChoiceButon1/ChoiceButon2/ChoiceButon3/Button
-@onready var browser = $/root/BrowserS/Browser
-@onready var text_wrong = $/root/BrowserS/WrongChoice
-@onready var text_good = $/root/BrowserS/GoodChoice
-@onready var text_score = $BrowserGameManager/ScoreLabel
+@onready var browser = $"../../Browser"
+@onready var text_wrong = $"../../Browser/WrongChoice"
+@onready var text_good = $"../../Browser/GoodChoice"
 var action_choice = preload("res://scenes/browser/browser_choice.tscn")
 
 func _button_pressed():
 	buttons.visible = false
 	question.visible = false
-	text_score.visible = true
-	await get_tree().create_timer(2.0).timeout
-	text_score.visible = false
 
 
 func _goodchoice_pressed() :

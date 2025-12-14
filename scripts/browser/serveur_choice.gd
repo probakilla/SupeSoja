@@ -5,9 +5,9 @@ extends Node
 @onready var button_one = $ChoiceButon1/Button
 @onready var button_two = $ChoiceButon1/ChoiceButon2/Button
 @onready var button_three = $ChoiceButon1/ChoiceButon2/ChoiceButon3/Button
-@onready var browser = $/root/BrowserS/Browser
-@onready var text_wrong = $/root/BrowserS/WrongChoice
-@onready var text_good = $/root/BrowserS/GoodChoice
+@onready var browser = $"../../Browser"
+@onready var text_wrong = $"../../Browser/WrongChoice"
+@onready var text_good = $"../../Browser/GoodChoice"
 var action_choice = preload("res://scenes/browser/food_choice.tscn")
 
 func _button_pressed():

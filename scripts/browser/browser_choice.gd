@@ -5,10 +5,10 @@ extends Node
 @onready var button_one = $ChoiceButon1/Button
 @onready var button_two = $ChoiceButon1/ChoiceButon2/Button
 @onready var button_three = $ChoiceButon1/ChoiceButon2/ChoiceButon3/Button
-@onready var browser = $/root/BrowserS/Browser
-@onready var text_wrong = $/root/BrowserS/WrongChoice
-@onready var text_good = $/root/BrowserS/GoodChoice
-@onready var text = $/root/BrowserS/ScoreLabel
+@onready var browser = $"../../Browser"
+@onready var text_wrong = $"../../Browser/WrongChoice"
+@onready var text_good = $"../../Browser/GoodChoice"
+@onready var text = $"../../Browser/ScoreLabel"
 var action_choice = preload("res://scenes/browser/frigo_choice.tscn")
 
 
@@ -42,4 +42,3 @@ func _ready() -> void:
 	button_one.connect("pressed", _wrongchoice_pressed)
 	button_two.connect("pressed", _goodchoice_pressed)
 	button_three.connect("pressed", _button_pressed)
-	pass
