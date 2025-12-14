@@ -1,7 +1,7 @@
 extends Node2D
-@onready var imprimer_checkBox: CheckBox = $Sprite2D/Control/VBoxContainer/QueteImprimer
-@onready var recherche_checkBox: CheckBox = $Sprite2D/Control/VBoxContainer/QueteAntiLLM
-@onready var postit_sprite = $Sprite2D
+@onready var imprimer_checkBox: CheckBox = $Area2D/Sprite2D/Control/VBoxContainer/QueteImprimer
+@onready var recherche_checkBox: CheckBox = $Area2D/Sprite2D/Control/VBoxContainer/QueteAntiLLM
+@onready var postit_sprite = $Area2D/Sprite2D
 @onready var game_manager = %GameManager
 
 var mail_checked = false
@@ -14,23 +14,19 @@ func on_imprimer_quest_toggle() -> void:
 	if(mail_checked == true):
 		imprimer_checkBox.button_pressed = false
 		mail_checked = false
-		print("Imprimer Quest Failed")
 		return
 	else:
 		imprimer_checkBox.button_pressed = true
 		mail_checked = true
-		print("Imprimer Quest Complete")
 
 func _on_recherche_quest_toggle() -> void:
 	if(recherche_checked == true):
 		recherche_checkBox.button_pressed = false
 		recherche_checked = false
-		print("Recherche Quest unsuccess")
 		return
 	else:
 		recherche_checkBox.button_pressed = true
 		recherche_checked = true
-		print("Recherche Quest Complete")
 
 
 func _ready() -> void:

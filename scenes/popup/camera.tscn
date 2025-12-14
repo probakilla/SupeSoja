@@ -332,7 +332,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main" type="Node2D"]
 visible = false
-position = Vector2(576, 323)
 
 [node name="GameManager" type="Control" parent="."]
 unique_name_in_owner = true
