@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dqheh86xe4g68"]
+[gd_scene load_steps=64 format=3 uid="uid://dqheh86xe4g68"]
 
 [ext_resource type="Texture2D" uid="uid://bg8sg3y3yi3p3" path="res://assets/images/desktop.png" id="1_hfh83"]
 [ext_resource type="Script" uid="uid://v6jtx5sijoc1" path="res://scripts/game_manager.gd" id="1_ubpei"]
@@ -21,7 +21,8 @@
 [ext_resource type="Script" uid="uid://bw7apd83ss2ss" path="res://scripts/internet_btn.gd" id="13_h40tr"]
 [ext_resource type="Script" uid="uid://7nco71htcchp" path="res://scenes/popup/accessibility_button.gd" id="17_aaeoe"]
 [ext_resource type="Texture2D" uid="uid://b6wkj5aq1jqfm" path="res://assets/images/accessibilite_logo.png" id="18_bqvni"]
-[ext_resource type="Script" path="res://scenes/popup/AccessibilityOptionButton.gd" id="18_x3e13"]
+[ext_resource type="Script" uid="uid://pa4mqcsfp5c5" path="res://scenes/popup/AccessibilityOptionButton.gd" id="18_x3e13"]
+[ext_resource type="PackedScene" uid="uid://cob62bbyti1te" path="res://scenes/Moral/pop_up_moral.tscn" id="20_g5hlv"]
 
 [sub_resource type="Animation" id="Animation_diie0"]
 length = 0.001
@@ -602,6 +603,11 @@ position = Vector2(120.18555, -59.737793)
 rotation = -0.01608396
 scale = Vector2(2.3323207, 1.5306869)
 shape = SubResource("RectangleShape2D_h40tr")
+
+[node name="PopUpMoral" parent="Main/DesktopAnimator" instance=ExtResource("20_g5hlv")]
+visible = false
+position = Vector2(275, 84)
+scale = Vector2(0.6944339, 0.5652085)
 
 [node name="AccessibilitySprite" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
 position = Vector2(-1150.2446, -166.43411)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4a7jm565qiow" path="res://scenes/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://ls7lv7ajhsev" path="res://scenes/snake_segment.tscn" id="2_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://ckpcbmhqkjov7" path="res://assets/images/Background.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://ckpcbmhqkjov7" path="res://assets/images/snake_background.png" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cydo03gnfkbph" path="res://scenes/hud.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://b8pbs04sf0ki3" path="res://assets/images/Marisa.png" id="5_tbgi4"]
 

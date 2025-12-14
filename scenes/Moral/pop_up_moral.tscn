@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cob62bbyti1te"]
+
+[ext_resource type="Texture2D" uid="uid://pabubyubcp8x" path="res://assets/images/MoralSprite.png" id="1_rji06"]
+[ext_resource type="Script" uid="uid://c01qu5loydvv0" path="res://scenes/Moral/MoralCloseButton.gd" id="2_xpehp"]
+
+[node name="PopUpMoral" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(454.00003, 340)
+scale = Vector2(4.5526314, 6.787879)
+texture = ExtResource("1_rji06")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 151.0
+offset_top = 553.0
+offset_right = 774.0
+offset_bottom = 657.0
+theme_override_font_sizes/font_size = 70
+text = "J'ai compris"
+script = ExtResource("2_xpehp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.24840015, 0.24840018, 0.24840015, 1)
+offset_left = 35.207214
+offset_top = 32.38098
+offset_right = 880.1804
+offset_bottom = 541.6467
+theme_override_font_sizes/normal_font_size = 30
+text = "Félicitations!
+
+	Tu as réussi à fermer toutes les pop-up publicitaires. Ces pop-up sont dévastateurs pour l'environnement et sont éthiquement critiquables. Consommation d'énergie inutile (hébergements de données), empreinte carbone considérable en raison du trafic numérique (les scams exploitent des chaînes complexes : adtech,redirecteurs, pages malveillantes, serveurs offshores), résultat = O₂ émis pour du contenu nuisible.
+
+Il est important de faire attention où on clique ! 
+"

@@ -22,13 +22,11 @@ func _understand() -> void:
 	explanation.visible = false
 	_button_pressed()
 	
-	
 func _button_pressed():
 	buttons.visible = false
 	question.visible = false
 	understand_btn.understand.disconnect(_understand)
 	BrowserGameManager.finished.emit()
-
 
 func _goodchoice_pressed() :
 	text_good.visible = true

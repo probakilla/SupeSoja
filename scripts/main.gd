@@ -11,6 +11,8 @@ extends Area2D
 @onready var todo_list = $DesktopAnimator/Desktop/QuestList
 @onready var flowerpot = $DesktopAnimator/Desktop/Flowerpot
 @onready var screen = $DesktopAnimator/Desktop/Screen
+@onready var moralpopup = $DesktopAnimator/PopUpMoral
+
 
 var flowerpot_lvl0 = preload("res://assets/images/flowerpot.png")
 var flowerpot_lvl1 = preload("res://assets/images/Plante_niveau_1.png")
@@ -39,7 +41,7 @@ func _refresh_flowerpot() -> void:
 	if nb_completed == 1:
 		flowerpot.texture = flowerpot_lvl1
 	if nb_completed == 2:
-		flowerpot.texture = flowerpot_lvl2
+		flowerpot.texture = flowerpot_lvl3
 	if nb_completed == 3:
 		flowerpot.texture = flowerpot_lvl3
 		
@@ -59,7 +61,9 @@ func _on_popup_game_finished() -> void:
 	todo_list.on_imprimer_quest_toggle()
 	completion["email"] = true
 	_refresh_flowerpot()
+	moralpopup.visible = true
 
+	
 
 func _on_internet_game_finished() -> void:
 	if BrowserGameManager.score > 0:
