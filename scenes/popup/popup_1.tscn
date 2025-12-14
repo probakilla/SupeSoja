@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=3 uid="uid://chwvegeuayqnf"]
+
+[ext_resource type="Script" uid="uid://b0h3pklmjhwy2" path="res://scripts/popup/popup.gd" id="1_2eskn"]
+[ext_resource type="Texture2D" uid="uid://dq2c4uufbakfi" path="res://assets/images/pop_up.png" id="2_7cpf1"]
+[ext_resource type="Script" uid="uid://7r7c5lthtg6k" path="res://scripts/popup/close_btn.gd" id="3_lva56"]
+[ext_resource type="Script" uid="uid://ojcd3hlkjd3c" path="res://scripts/popup/accept_btn.gd" id="4_7cpf1"]
+[ext_resource type="FontFile" uid="uid://dlcvrrohefcjq" path="res://assets/font/KiwiSoda.ttf" id="4_al77e"]
+
+[sub_resource type="Animation" id="Animation_lva56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Area2D/PopupTemplate:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cv86x"]
+resource_name = "pop"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Area2D/PopupTemplate:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7cpf1"]
+_data = {
+&"RESET": SubResource("Animation_lva56"),
+&"pop": SubResource("Animation_cv86x")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cpf1"]
+size = Vector2(198.5, 99)
+
+[sub_resource type="Theme" id="Theme_7cpf1"]
+[node name="Popup1" type="Node2D"]
+script = ExtResource("1_2eskn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7cpf1")
+}
+autoplay = "pop"
+
+[node name="Area2D" type="Area2D" parent="AnimationPlayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Area2D"]
+position = Vector2(100, 50)
+shape = SubResource("RectangleShape2D_7cpf1")
+
+[node name="Button" type="Button" parent="AnimationPlayer/Area2D"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(24.883957, 12.358651)
+theme = SubResource("Theme_7cpf1")
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
+
+[node name="PopupTemplate" type="Sprite2D" parent="AnimationPlayer/Area2D"]
+position = Vector2(100, 50)
+texture = ExtResource("2_7cpf1")
+
+[node name="CloseBtn" type="Button" parent="AnimationPlayer/Area2D"]
+offset_left = 184.0
+offset_top = 3.0
+offset_right = 197.0
+offset_bottom = 16.0
+flat = true
+script = ExtResource("3_lva56")
+
+[node name="Label" type="Label" parent="AnimationPlayer/Area2D"]
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 191.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("4_al77e")
+theme_override_font_sizes/font_size = 19
+text = "Super new stuff"
+
+[node name="Label2" type="Label" parent="AnimationPlayer/Area2D"]
+offset_left = 9.0
+offset_top = 19.0
+offset_right = 203.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "CLICK HERE TO CLAIM 
+YOUR COOL FREE STUFF"
+
+[node name="Label3" type="Label" parent="AnimationPlayer/Area2D"]
+offset_left = 116.0
+offset_top = 73.0
+offset_right = 212.0
+offset_bottom = 96.0
+scale = Vector2(0.9528109, 1.1922599)
+theme_override_colors/font_color = Color(1.92523e-07, 0.65196335, 0.15451339, 1)
+theme_override_fonts/font = ExtResource("4_al77e")
+theme_override_font_sizes/font_size = 15
+text = "LETS GO!!!"
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/Area2D"]
+visible = false
+offset_left = 101.0
+offset_top = 70.0
+offset_right = 141.0
+offset_bottom = 110.0
+scale = Vector2(2.3172832, 0.6035722)
+color = Color(0.76862746, 0.078431375, 0.06666667, 1)
+
+[node name="AcceptBtn" type="Button" parent="AnimationPlayer/Area2D"]
+offset_left = 102.0
+offset_top = 71.0
+offset_right = 205.0
+offset_bottom = 90.0
+scale = Vector2(0.8883996, 1.1638938)
+flat = true
+script = ExtResource("4_7cpf1")

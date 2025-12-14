@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwb3gg83cej1q"]
+
+[ext_resource type="PackedScene" uid="uid://d1gstdiaad7x3" path="res://scenes/QuestListNode.tscn" id="1_3mqji"]
+
+[node name="Main2DScene" type="Node2D"]
+position = Vector2(53, 99)
+
+[node name="QuestList" parent="." instance=ExtResource("1_3mqji")]
+position = Vector2(280, -10)
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Cliquer"
+
+[connection signal="pressed" from="Button" to="QuestList" method="_on_mail_quest_completed"]
