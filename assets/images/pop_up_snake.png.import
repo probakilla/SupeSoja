@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2d64xj3gvwqc"
-path="res://.godot/imported/Image collée.png-88b132bde88772c258c37c3e5d4e4dd7.ctex"
+uid="uid://l22imj64lfmo"
+path="res://.godot/imported/pop_up_snake.png-d8243784f64d9ae0a8e1bd0be8cea758.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Image collée.png"
-dest_files=["res://.godot/imported/Image collée.png-88b132bde88772c258c37c3e5d4e4dd7.ctex"]
+source_file="res://assets/images/pop_up_snake.png"
+dest_files=["res://.godot/imported/pop_up_snake.png-d8243784f64d9ae0a8e1bd0be8cea758.ctex"]
 
 [params]
 
