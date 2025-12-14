@@ -467,5 +467,5 @@ offset_top = -15.749998
 offset_right = 20.99997
 offset_bottom = 15.250002
 scale = Vector2(1.5370212, 0.9872733)
-text = "Start game"
+text = "Jouer"
 script = ExtResource("2_dlwdm")

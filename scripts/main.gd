@@ -58,12 +58,12 @@ func _start_popup_game() -> void:
 	if game_manager.popup_game_started:
 		return
 	
-	game_manager.popup_game_ongoing = true
+	game_manager.popup_game_started = true
 	button_animator.play("click")
 	var popup_minigame = popup_screen.instantiate()
 	add_child(popup_minigame)
 	popup_minigame.game_ended.connect(_on_popup_game_finished)
-	game_manager.popup_game_ongoing = false
+	game_manager.popup_game_started = false
 
 
 func _ready() -> void:
