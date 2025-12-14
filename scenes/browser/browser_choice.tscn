@@ -44,12 +44,13 @@ offset_bottom = 369.54514
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="ChoiceButon1/ChoiceButon2/ChoiceButon3"]
-offset_left = -720.6008
+offset_left = -733.63306
 offset_top = -235.69409
-offset_right = 720.6007
+offset_right = 707.5685
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Chrome"
+text = "Google Chrome"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="ChoiceButon1/ChoiceButon2"]
@@ -80,7 +81,8 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Ecosia"
+text = "Ecosia"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="ChoiceButon1"]
@@ -111,17 +113,19 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Chatgpt"
+text = "Chatgpt"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = 70.0
-offset_top = 71.0
+offset_top = 53.0
 offset_right = 1089.0
-offset_bottom = 147.0
+offset_bottom = 140.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Qu'elle moteur de recherche choisir ?"
+text = "Je veux effectuer une recherche. Quel moteur de recherche dois-je privilégier ?"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true

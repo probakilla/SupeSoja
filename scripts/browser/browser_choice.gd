@@ -15,6 +15,8 @@ extends Node
 
 var action_choice = preload("res://scenes/browser/frigo_choice.tscn")
 
+var explanation_text = "Ecosia est à privilégier par rapport à Google ou à l'IA ! Impact écologique positif\n(financement de plantation d'arbre, plus de 200 millions d'arbres plantés, serveurs\nalimentés à 100% d'énergies renouvelables), pas de vente de données personnelles\n(amélioration du score RSE). L'utilisation de l'IA est elle très limitée ! informations non\nsourcée, erreurs dans les réponses, impact écologique fort. Donc : à privilégier\ndans le cadre du travail !"
+
 func _understand() -> void:
 	text_good.visible = false
 	text_wrong.visible = false
@@ -57,3 +59,4 @@ func _ready() -> void:
 	button_two.connect("pressed", _goodchoice_pressed)
 	button_three.connect("pressed", _wrongchoice_pressed)
 	understand_btn.understand.connect(_understand)
+	explanation.text = explanation_text

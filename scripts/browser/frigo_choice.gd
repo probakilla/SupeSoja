@@ -14,7 +14,7 @@ extends Node
 @onready var explanation = $"../../Browser/Explanation"
 
 var action_choice = preload("res://scenes/browser/waste_choice.tscn")
-
+var explanation_text = "Aujourd'hui, le plus important pour un choix écologique et responsable, c'est de faire\nattention à la classe énergétique. La classe A+++ garantit une conso d'électricité\nminimale, donc impact écologique réduit."
 
 func _understand() -> void:
 	text_good.visible = false
@@ -57,3 +57,4 @@ func _ready() -> void:
 	button_two.connect("pressed", _wrongchoice_pressed)
 	button_three.connect("pressed", _wrongchoice_pressed)
 	understand_btn.understand.connect(_understand)
+	explanation.text = explanation_text

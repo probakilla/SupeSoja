@@ -14,7 +14,7 @@ extends Node
 @onready var explanation = $"../../Browser/Explanation"
 
 var action_choice = preload("res://scenes/browser/serveur_choice.tscn")
-
+var explanation_text = "Le tri des déchets a un impact RSE (Responsabilité Sociétale des Entreprises) très positif,\ncar il agit sur les 3 piliers du développement durable : environnemental,\nsocial et économique."
 
 func _understand() -> void:
 	text_good.visible = false
@@ -55,3 +55,4 @@ func _ready() -> void:
 	button_two.connect("pressed", _wrongchoice_pressed)
 	button_three.connect("pressed", _goodchoice_pressed)
 	understand_btn.understand.connect(_understand)
+	explanation.text = explanation_text

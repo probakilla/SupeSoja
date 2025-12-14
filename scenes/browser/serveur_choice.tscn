@@ -44,13 +44,15 @@ offset_bottom = 369.54514
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="ChoiceButon1/ChoiceButon2/ChoiceButon3"]
-offset_left = -720.6008
-offset_top = -235.69409
-offset_right = 720.6007
-offset_bottom = 369.54517
+offset_left = -715.6957
+offset_top = -237.08156
+offset_right = 725.50586
+offset_bottom = 368.1577
 theme_override_font_sizes/font_size = 100
-text = "- Tous stocker chez OVH"
+text = "Stocker sur OVH"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="ChoiceButon1/ChoiceButon2"]
 anchors_preset = -1
@@ -80,10 +82,10 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Acheter de nouveaux 
- serveur pour 
-  les mettre dedans"
+text = "Stocker sur de nouveaux serveurs offshores"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="ChoiceButon1"]
 anchors_preset = -1
@@ -108,14 +110,15 @@ offset_bottom = 369.54514
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="ChoiceButon1"]
-offset_left = -720.6008
-offset_top = -235.69409
-offset_right = 720.6007
-offset_bottom = 369.54517
+offset_left = -716.2598
+offset_top = -241.5137
+offset_right = 724.9417
+offset_bottom = 363.72556
 theme_override_font_sizes/font_size = 100
-text = "- Tout mettre dans un 
-  Google Drive"
+text = "Un stockage complet sur Google Drive"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = 70.0
@@ -124,7 +127,7 @@ offset_right = 1089.0
 offset_bottom = 147.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "L'entreprise veux déplacer leurs donné que fait elle  ?"
+text = "L'entreprise veut stocker ses données sur un serveur. "
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true

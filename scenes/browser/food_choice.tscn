@@ -49,10 +49,10 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Faite livrer les repas 
-  selon  la demande 
-  de chaque salarié"
+text = "Faire des repas individualisés pour chaque salarié"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="Label" type="Label" parent="ChoiceButon1/ChoiceButon2"]
 anchors_preset = -1
@@ -82,9 +82,10 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Faite des repas gras et 
-  peu cher pour l'entreprise"
+text = "Privilégier le moindre coût et encourager l'industriel"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="ChoiceButon1"]
 anchors_preset = -1
@@ -114,18 +115,20 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Faite des repas adapter la 
-  production de votre région"
+text = "Privilégier des produits locaux et bio"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = 70.0
-offset_top = 71.0
+offset_top = 59.0
 offset_right = 1089.0
-offset_bottom = 147.0
+offset_bottom = 146.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "L'entreprise veux changer les menus  qu'elle propose !"
+text = "L'entreprise veut changer les menus  à la cantine. Quel est le choix a privilégié ?"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true

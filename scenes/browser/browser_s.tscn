@@ -38,10 +38,11 @@ offset_top = -142.48853
 offset_right = 525.7053
 offset_bottom = 136.74414
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 74
 text = "J'ai compris"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="ButtonUnderstand" type="Button" parent="Area2D/Browser/Understand"]
 offset_left = -493.48877
@@ -163,7 +164,7 @@ offset_top = -39.600006
 offset_right = -571.50543
 offset_bottom = -16.600006
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 30
 text = "This is an awesome text
 This is an awesome text
 This is an awesome text

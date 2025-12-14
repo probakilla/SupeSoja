@@ -14,7 +14,7 @@ extends Node
 @onready var explanation = $"../../Browser/Explanation"
 
 var action_choice = preload("res://scenes/browser/browser_choice.tscn")
-
+var explanation_text = "Le local et le bio doivent être mis en avant par rapport aux produits déjà préparés et industriels. Qualité nutrionnelle et sanitaire assurée ! Impact RSE positif et impact environnemental réduit, un bon combo."
 
 func _understand() -> void:
 	text_good.visible = false
@@ -53,3 +53,4 @@ func _ready() -> void:
 	button_two.connect("pressed", _wrongchoice_pressed)
 	button_three.connect("pressed", _wrongchoice_pressed)
 	understand_btn.understand.connect(_understand)
+	understand.text = explanation_text

@@ -14,7 +14,7 @@ extends Node
 @onready var explanation = $"../../Browser/Explanation"
 
 var action_choice = preload("res://scenes/browser/food_choice.tscn")
-
+var explanation_text = "Le meilleur choix est de stocker des données sur OVH. OVH est un hébergeur européen\ndont les données sont soumises au RGPD. Sécurité et fiabilité, avec en supplément un\nengagement environnemental."
 
 func _understand() -> void:
 	text_good.visible = false
@@ -57,3 +57,4 @@ func _ready() -> void:
 	button_two.connect("pressed", _goodchoice_pressed)
 	button_three.connect("pressed", _goodchoice_pressed)
 	understand_btn.understand.connect(_understand)
+	explanation.text = explanation_text

@@ -49,9 +49,10 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Rajouté un composte  
-  dans la cour de l'entreprise"
+text = "Deux poubelles : une pour les emballages, une pour les déchets alimentaires"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="ChoiceButon1/ChoiceButon2"]
 anchors_preset = -1
@@ -81,8 +82,10 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Ne rien changer"
+text = "Jeter les emballages par la fenêtre pour l'alimentation des vers de terre"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="ChoiceButon1"]
 anchors_preset = -1
@@ -112,18 +115,20 @@ offset_top = -235.69409
 offset_right = 720.6007
 offset_bottom = 369.54517
 theme_override_font_sizes/font_size = 100
-text = "- Tous mettre dans 
-  une seule poubelle"
+text = "Une seule poubelle pour toute sorte de déchets"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = 70.0
-offset_top = 71.0
+offset_top = 57.0
 offset_right = 1089.0
-offset_bottom = 147.0
+offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "L'entreprise veux  réviser leurs façon de trier les Déchets !"
+text = "L'entreprise veut réviser sa façon de trier les déchets ! Comment doit-t-ellle s'y prendre ?"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true
