@@ -65,6 +65,7 @@ func _on_internet_game_finished() -> void:
 	if BrowserGameManager.score > 0:
 		game_manager.internet_game_started = false
 		completion["internet"] = true
+		todo_list.on_recherche_quest_toggle()
 		_refresh_flowerpot()
 	
 	if internet_minigame:

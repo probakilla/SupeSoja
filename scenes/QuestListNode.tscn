@@ -47,21 +47,18 @@ text = "Todo"
 
 [node name="QueteImprimer" parent="Area2D/Sprite2D/Control/VBoxContainer" instance=ExtResource("2_nq82c")]
 layout_mode = 2
-
-[node name="QueteMails" type="CheckBox" parent="Area2D/Sprite2D/Control/VBoxContainer"]
-modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-layout_mode = 2
-text = "Nettoie ta boite mail"
-
-[node name="QueteMails2" type="CheckBox" parent="Area2D/Sprite2D/Control/VBoxContainer"]
-modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-layout_mode = 2
-text = "Evite les mails de phising"
+text = "Évite le fishing par mail"
 
 [node name="QueteAntiLLM" type="CheckBox" parent="Area2D/Sprite2D/Control/VBoxContainer"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 layout_mode = 2
 text = "Fais une recherche web"
+
+[node name="QueteMails" type="CheckBox" parent="Area2D/Sprite2D/Control/VBoxContainer"]
+visible = false
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+layout_mode = 2
+text = "Libère de l'espace disque"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

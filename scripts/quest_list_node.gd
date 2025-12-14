@@ -19,7 +19,7 @@ func on_imprimer_quest_toggle() -> void:
 		imprimer_checkBox.button_pressed = true
 		mail_checked = true
 
-func _on_recherche_quest_toggle() -> void:
+func on_recherche_quest_toggle() -> void:
 	if(recherche_checked == true):
 		recherche_checkBox.button_pressed = false
 		recherche_checked = false
