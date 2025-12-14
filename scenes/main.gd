@@ -5,8 +5,8 @@ extends Node
 var score : int
 var game_started : bool = false
 
-var cells : int = 20
-var cells_size : int = 50
+var cells : int = 10
+var cells_size : int = 10
 
 var food_pos: Vector2
 var regen_food : bool = true
@@ -15,7 +15,7 @@ var old_data : Array
 var snake_data : Array
 var snake : Array
 
-var start_pos = Vector2(9, 9)
+var start_pos = Vector2(100, 100)
 var up = Vector2(0, -1)
 var down = Vector2(0, 1)
 var left = Vector2(-1, 0)

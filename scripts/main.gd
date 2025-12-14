@@ -7,6 +7,7 @@ extends Area2D
 @onready var desktop_anim = $DesktopAnimator
 @onready var mail_btn = $DesktopAnimator/Desktop/Background/Mails/MailBtn
 @onready var internet_btn = $DesktopAnimator/Desktop/Background/Browser/InternetBtn
+@onready var server_btn = $DesktopAnimator/Desktop/Background/Server/ServerBtn
 @onready var button_animator = $ButtonAnimator
 @onready var todo_list = $DesktopAnimator/Desktop/QuestList
 @onready var flowerpot = $DesktopAnimator/Desktop/Flowerpot
@@ -25,6 +26,7 @@ var completion = {
 
 var popup_screen = preload("res://scenes/popup/popup_screen.tscn")
 var internet_screen = preload("res://scenes/browser/browser_s.tscn")
+var snake_screen = load("res://scenes/main.tscn")
 var internet_minigame = null
 
 func _refresh_flowerpot() -> void:
@@ -98,10 +100,21 @@ func _start_internet_game() -> void:
 	internet_minigame.rotation = -.018
 	screen.add_child(internet_minigame)
 	BrowserGameManager.finished.connect(_on_internet_game_finished)
-	
+
+
+func _start_server_game() -> void:
+	if not game_manager.game_started:
+		return
+	if game_manager.snake_game_started:
+		return
+	game_manager.snake_game_started = true
+	var snake_minigame = snake_screen.instantiate()
+	screen.add_child(snake_minigame)
+
 
 func _ready() -> void:
 	mail_btn.disabled = true
 	start_btn.start_game.connect(_start)
 	mail_btn.start_mail_game.connect(_start_popup_game)
 	internet_btn.start_internet.connect(_start_internet_game)
+	server_btn.connect("pressed", _start_server_game)

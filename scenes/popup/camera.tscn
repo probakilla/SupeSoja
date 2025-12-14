@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dqheh86xe4g68"]
+[gd_scene load_steps=64 format=3 uid="uid://dqheh86xe4g68"]
 
 [ext_resource type="Texture2D" uid="uid://bg8sg3y3yi3p3" path="res://assets/images/desktop.png" id="1_hfh83"]
 [ext_resource type="Script" uid="uid://v6jtx5sijoc1" path="res://scripts/game_manager.gd" id="1_ubpei"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bcbt61p5bxiep" path="res://scenes/QuestListNode.tscn" id="7_ytgl2"]
 [ext_resource type="Texture2D" uid="uid://d0lin4e5xvtkt" path="res://assets/images/ie.png" id="12_3phci"]
 [ext_resource type="Script" uid="uid://bw7apd83ss2ss" path="res://scripts/internet_btn.gd" id="13_h40tr"]
+[ext_resource type="Texture2D" uid="uid://ccq3dw02xyvr0" path="res://assets/images/server_ded.png" id="16_bqvni"]
 [ext_resource type="Script" uid="uid://7nco71htcchp" path="res://scenes/popup/accessibility_button.gd" id="17_aaeoe"]
 [ext_resource type="Texture2D" uid="uid://b6wkj5aq1jqfm" path="res://assets/images/accessibilite_logo.png" id="18_bqvni"]
 [ext_resource type="Script" path="res://scenes/popup/AccessibilityOptionButton.gd" id="18_x3e13"]
@@ -580,6 +581,27 @@ offset_bottom = 365.0065
 theme_override_font_sizes/font_size = 77
 text = "internet
 "
+
+[node name="Server" type="Sprite2D" parent="Main/DesktopAnimator/Desktop/Background"]
+position = Vector2(-553.7817, 176.23235)
+scale = Vector2(1.4819306, 1.3226347)
+texture = ExtResource("16_bqvni")
+
+[node name="ServerBtn" type="Button" parent="Main/DesktopAnimator/Desktop/Background/Server"]
+offset_left = -85.23815
+offset_top = -55.904892
+offset_right = -77.23815
+offset_bottom = -47.904892
+scale = Vector2(20.204895, 18.162447)
+flat = true
+
+[node name="Label" type="Label" parent="Main/DesktopAnimator/Desktop/Background/Server"]
+offset_left = -48.519264
+offset_top = 51.05866
+offset_right = 253.66653
+offset_bottom = 266.05862
+theme_override_font_sizes/font_size = 30
+text = "server"
 
 [node name="Flowerpot" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
 position = Vector2(1353.8462, 61.538464)
