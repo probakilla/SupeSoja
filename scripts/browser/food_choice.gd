@@ -8,11 +8,16 @@ extends Node
 @onready var browser = $/root/BrowserS/Browser
 @onready var text_wrong = $/root/BrowserS/WrongChoice
 @onready var text_good = $/root/BrowserS/GoodChoice
+@onready var text_score = $BrowserGameManager/ScoreLabel
 var action_choice = preload("res://scenes/browser/browser_choice.tscn")
 
 func _button_pressed():
 	buttons.visible = false
 	question.visible = false
+	text_score.visible = true
+	await get_tree().create_timer(2.0).timeout
+	text_score.visible = false
+
 
 func _goodchoice_pressed() :
 	text_good.visible = true
@@ -20,6 +25,7 @@ func _goodchoice_pressed() :
 	question.visible = false
 	await get_tree().create_timer(1.0).timeout
 	text_good.visible = false
+	BrowserGameManager.increment_score()
 	_button_pressed()
 
 func _wrongchoice_pressed() :
@@ -28,6 +34,7 @@ func _wrongchoice_pressed() :
 	question.visible = false
 	await get_tree().create_timer(1.0).timeout
 	text_wrong.visible = false
+	BrowserGameManager.decrement_score()
 	_button_pressed()
 
 func _ready() -> void:

@@ -23,6 +23,7 @@ func _goodchoice_pressed() :
 	question.visible = false
 	await get_tree().create_timer(1.0).timeout
 	text_good.visible = false
+	BrowserGameManager.increment_score()
 	_button_pressed()
 
 func _wrongchoice_pressed() :
@@ -31,6 +32,7 @@ func _wrongchoice_pressed() :
 	question.visible = false
 	await get_tree().create_timer(1.0).timeout
 	text_wrong.visible = false
+	BrowserGameManager.decrement_score()
 	_button_pressed()
 
 func _ready() -> void:

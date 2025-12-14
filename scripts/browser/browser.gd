@@ -8,6 +8,7 @@ var point : int = 0
 var browser_choice = preload("res://scenes/browser/browser_choice.tscn")
 @onready var text_wrong = $WrongChoice
 @onready var text_good = $GoodChoice
+@onready var text_score = $ScoreLabel
 
 func _button_pressed():
 	text_wrong.position = Vector2(-1200, 0)
@@ -25,3 +26,8 @@ func _button_pressed():
 func _ready() -> void:
 	browser_buton.connect("pressed", _button_pressed)
 	pass
+
+func _process(delta: float) -> void:
+	var text = "Score : %s"
+	var score = text%BrowserGameManager.score
+	text_score.text = score
