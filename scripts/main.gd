@@ -83,11 +83,13 @@ func _start_popup_game() -> void:
 
 
 func _start_internet_game() -> void:
+	if not game_manager.game_started:
+		return
 	if game_manager.internet_game_started:
 		return
 
 	game_manager.popup_game_started = true
-	# animate here
+	button_animator.play("click_internet")
 	internet_minigame = internet_screen.instantiate()
 	internet_minigame.scale.x += .42
 	internet_minigame.scale.y += .52
