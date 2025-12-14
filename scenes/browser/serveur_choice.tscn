@@ -1,0 +1,130 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv1t6yvs4oqj5"]
+
+[ext_resource type="Texture2D" uid="uid://4b6m4ar4lk5i" path="res://assets/images/Browser/choice_buton.png" id="1_1gyuq"]
+[ext_resource type="Script" uid="uid://13jphvkdrjdq" path="res://scripts/browser/serveur_choice.gd" id="1_lb53a"]
+
+[node name="ServeurChoice" type="Node2D"]
+script = ExtResource("1_lb53a")
+
+[node name="ChoiceButon1" type="Sprite2D" parent="."]
+position = Vector2(236, 275)
+scale = Vector2(0.23036332, 0.34366578)
+texture = ExtResource("1_1gyuq")
+
+[node name="ChoiceButon2" type="Sprite2D" parent="ChoiceButon1"]
+position = Vector2(1490.8516, 2.0980835e-05)
+scale = Vector2(0.99963886, 1.0032054)
+texture = ExtResource("1_1gyuq")
+
+[node name="ChoiceButon3" type="Sprite2D" parent="ChoiceButon1/ChoiceButon2"]
+position = Vector2(1490.8516, 2.0980835e-05)
+scale = Vector2(0.99963886, 1.0032054)
+texture = ExtResource("1_1gyuq")
+
+[node name="Label" type="Label" parent="ChoiceButon1/ChoiceButon2/ChoiceButon3"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.171
+offset_left = -723.04254
+offset_top = -369.5451
+offset_right = -726.841
+offset_bottom = -219.42711
+theme_override_font_sizes/font_size = 100
+text = "choix 3
+"
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ChoiceButon1/ChoiceButon2/ChoiceButon3"]
+self_modulate = Color(2.5210483, 2.5210483, 2.5210483, 1)
+offset_left = -723.04254
+offset_top = -369.54507
+offset_right = 722.49994
+offset_bottom = 369.54514
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="ChoiceButon1/ChoiceButon2/ChoiceButon3"]
+offset_left = -720.6008
+offset_top = -235.69409
+offset_right = 720.6007
+offset_bottom = 369.54517
+theme_override_font_sizes/font_size = 100
+text = "- Tous stocker chez OVH"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="ChoiceButon1/ChoiceButon2"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.171
+offset_left = -723.04254
+offset_top = -369.5451
+offset_right = -726.841
+offset_bottom = -219.42711
+theme_override_font_sizes/font_size = 100
+text = "choix 2
+"
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ChoiceButon1/ChoiceButon2"]
+self_modulate = Color(2.5210483, 2.5210483, 2.5210483, 1)
+offset_left = -723.04254
+offset_top = -369.54507
+offset_right = 722.49994
+offset_bottom = 369.54514
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="ChoiceButon1/ChoiceButon2"]
+offset_left = -720.6008
+offset_top = -235.69409
+offset_right = 720.6007
+offset_bottom = 369.54517
+theme_override_font_sizes/font_size = 100
+text = "- Acheter de nouveaux 
+ serveur pour 
+  les mettre dedans"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="ChoiceButon1"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.171
+offset_left = -723.04254
+offset_top = -369.5451
+offset_right = -726.841
+offset_bottom = -219.42711
+theme_override_font_sizes/font_size = 100
+text = "choix 1
+"
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ChoiceButon1"]
+self_modulate = Color(2.5210483, 2.5210483, 2.5210483, 1)
+offset_left = -723.04254
+offset_top = -369.54507
+offset_right = 722.49994
+offset_bottom = 369.54514
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="ChoiceButon1"]
+offset_left = -720.6008
+offset_top = -235.69409
+offset_right = 720.6007
+offset_bottom = 369.54517
+theme_override_font_sizes/font_size = 100
+text = "- Tout mettre dans un 
+  Google Drive"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 70.0
+offset_top = 71.0
+offset_right = 1089.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "L'entreprise veux déplacer leurs donné que fait elle  ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
