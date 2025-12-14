@@ -8,7 +8,7 @@ var mail_checked = false
 var recherche_checked = false
 
 var init_scale = null
-const ZOOM_FACTOR: float = 1
+const ZOOM_FACTOR: float = 1.2
 
 func on_imprimer_quest_toggle() -> void:
 	if(mail_checked == true):

@@ -603,12 +603,12 @@ rotation = -0.01608396
 scale = Vector2(2.3323207, 1.5306869)
 shape = SubResource("RectangleShape2D_h40tr")
 
-[node name="AccessibilitySprite" type="Sprite2D" parent="Main/DesktopAnimator"]
-position = Vector2(926.99994, 444)
-scale = Vector2(0.27514252, 0.26583585)
+[node name="AccessibilitySprite" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
+position = Vector2(-1150.2446, -166.43411)
+scale = Vector2(1.0176244, 0.9832034)
 texture = ExtResource("18_bqvni")
 
-[node name="AccessibilityButton" type="Button" parent="Main/DesktopAnimator/AccessibilitySprite"]
+[node name="AccessibilityButton" type="Button" parent="Main/DesktopAnimator/Desktop/AccessibilitySprite"]
 anchors_preset = -1
 anchor_right = 0.06338028
 offset_left = 167.60124
@@ -619,6 +619,36 @@ scale = Vector2(0.687331, 8.644061)
 flat = true
 script = ExtResource("17_aaeoe")
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Main/DesktopAnimator/Desktop/AccessibilitySprite"]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer"]
+offset_left = 357.0
+offset_top = 113.0
+offset_right = 472.0
+offset_bottom = 249.0
+
+[node name="Desactiver" type="Button" parent="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Désactiver"
+script = ExtResource("18_x3e13")
+
+[node name="Tritanopie" type="Button" parent="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Tritanopie
+"
+script = ExtResource("18_x3e13")
+
+[node name="Deutéranopie" type="Button" parent="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Deutéranopie"
+script = ExtResource("18_x3e13")
+
+[node name="Protanopie" type="Button" parent="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Protanopie"
+script = ExtResource("18_x3e13")
 
 [node name="StartBtn" type="Sprite2D" parent="Main/DesktopAnimator"]
 position = Vector2(602.00006, 303)
@@ -639,37 +669,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_06lfi")
 text = "Jouer"
 script = ExtResource("2_dlwdm")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Main/DesktopAnimator"]
-visible = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/DesktopAnimator/CanvasLayer"]
-offset_left = 832.0
-offset_top = 204.0
-offset_right = 947.0
-offset_bottom = 340.0
-
-[node name="Desactiver" type="Button" parent="Main/DesktopAnimator/CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "Désactiver"
-script = ExtResource("18_x3e13")
-
-[node name="Tritanopie" type="Button" parent="Main/DesktopAnimator/CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "Tritanopie
-"
-script = ExtResource("18_x3e13")
-
-[node name="Deutéranopie" type="Button" parent="Main/DesktopAnimator/CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "Deutéranopie"
-script = ExtResource("18_x3e13")
-
-[node name="Protanopie" type="Button" parent="Main/DesktopAnimator/CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "Protanopie"
-script = ExtResource("18_x3e13")
-
-[connection signal="pressed" from="Main/DesktopAnimator/CanvasLayer/VBoxContainer/Desactiver" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_None"]
-[connection signal="pressed" from="Main/DesktopAnimator/CanvasLayer/VBoxContainer/Tritanopie" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_Tritanopie"]
-[connection signal="pressed" from="Main/DesktopAnimator/CanvasLayer/VBoxContainer/Deutéranopie" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_Deutéranopie"]
-[connection signal="pressed" from="Main/DesktopAnimator/CanvasLayer/VBoxContainer/Protanopie" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_Protanopie"]
+[connection signal="pressed" from="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer/Desactiver" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_None"]
+[connection signal="pressed" from="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer/Tritanopie" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_Tritanopie"]
+[connection signal="pressed" from="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer/Deutéranopie" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_Deutéranopie"]
+[connection signal="pressed" from="Main/DesktopAnimator/Desktop/AccessibilitySprite/CanvasLayer/VBoxContainer/Protanopie" to="CameraAnimation/Camera2D/CanvasLayer/ColorRect" method="set_Protanopie"]
