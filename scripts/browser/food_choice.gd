@@ -13,8 +13,7 @@ extends Node
 @onready var understand_btn = $"../../Browser/Understand/ButtonUnderstand"
 @onready var explanation = $"../../Browser/Explanation"
 
-var action_choice = preload("res://scenes/browser/browser_choice.tscn")
-var explanation_text = "Le local et le bio doivent être mis en avant par rapport aux produits déjà préparés et industriels. Qualité nutrionnelle et sanitaire assurée ! Impact RSE positif et impact environnemental réduit, un bon combo."
+var explanation_text = "Le local et le bio doivent être mis en avant par rapport aux produits déjà préparés et\nindustriels. Qualité nutrionnelle et sanitaire assurée ! Impact RSE positif et impact\nenvironnemental réduit, un bon combo."
 
 func _understand() -> void:
 	text_good.visible = false
@@ -28,6 +27,7 @@ func _button_pressed():
 	buttons.visible = false
 	question.visible = false
 	understand_btn.understand.disconnect(_understand)
+	BrowserGameManager.finished.emit()
 
 
 func _goodchoice_pressed() :
@@ -39,6 +39,7 @@ func _goodchoice_pressed() :
 	explanation.visible = true
 	BrowserGameManager.increment_score()
 
+
 func _wrongchoice_pressed() :
 	text_wrong.visible = true
 	buttons.visible = false
@@ -48,9 +49,10 @@ func _wrongchoice_pressed() :
 	explanation.visible = true
 	BrowserGameManager.decrement_score()
 	
+	
 func _ready() -> void:
 	button_one.connect("pressed", _goodchoice_pressed)
 	button_two.connect("pressed", _wrongchoice_pressed)
 	button_three.connect("pressed", _wrongchoice_pressed)
 	understand_btn.understand.connect(_understand)
-	understand.text = explanation_text
+	explanation.text = explanation_text

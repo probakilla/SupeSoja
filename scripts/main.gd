@@ -19,12 +19,13 @@ var flowerpot_lvl3 = preload("res://assets/images/plante_niveau_3.png")
 
 
 var completion = {
-	"email": false
+	"email": false,
+	"internat": false
 }
 
 var popup_screen = preload("res://scenes/popup/popup_screen.tscn")
 var internet_screen = preload("res://scenes/browser/browser_s.tscn")
-
+var internet_minigame = null
 
 func _refresh_flowerpot() -> void:
 	var nb_completed = 0
@@ -60,6 +61,15 @@ func _on_popup_game_finished() -> void:
 	_refresh_flowerpot()
 
 
+func _on_internet_game_finished() -> void:
+	if BrowserGameManager.score > 0:
+		game_manager.internet_game_started = false
+		completion["internet"] = true
+		_refresh_flowerpot()
+	
+	if internet_minigame:
+		internet_minigame.queue_free()
+
 func _start_popup_game() -> void:
 	if game_manager.popup_game_started:
 		return
@@ -77,13 +87,14 @@ func _start_internet_game() -> void:
 
 	game_manager.popup_game_started = true
 	# animate here
-	var internet_minigame = internet_screen.instantiate()
+	internet_minigame = internet_screen.instantiate()
 	internet_minigame.scale.x += .42
 	internet_minigame.scale.y += .52
 	internet_minigame.position.x += 115
 	internet_minigame.position.y -= 80
 	internet_minigame.rotation = -.018
 	screen.add_child(internet_minigame)
+	BrowserGameManager.finished.connect(_on_internet_game_finished)
 	
 
 func _ready() -> void:

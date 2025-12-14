@@ -16,6 +16,7 @@ extends Node
 var action_choice = preload("res://scenes/browser/food_choice.tscn")
 var explanation_text = "Le meilleur choix est de stocker des données sur OVH. OVH est un hébergeur européen\ndont les données sont soumises au RGPD. Sécurité et fiabilité, avec en supplément un\nengagement environnemental."
 
+
 func _understand() -> void:
 	text_good.visible = false
 	text_wrong.visible = false
