@@ -1,0 +1,508 @@
+[gd_scene load_steps=46 format=3 uid="uid://dqheh86xe4g68"]
+
+[ext_resource type="Texture2D" uid="uid://bg8sg3y3yi3p3" path="res://assets/images/desktop.png" id="1_hfh83"]
+[ext_resource type="Script" uid="uid://v6jtx5sijoc1" path="res://scripts/game_manager.gd" id="1_ubpei"]
+[ext_resource type="Script" uid="uid://y4ohadmuvt8k" path="res://scripts/main.gd" id="1_xyu4v"]
+[ext_resource type="Texture2D" uid="uid://dn7d20qxtr0bp" path="res://assets/images/FumeeGif3.png" id="2_3rcn1"]
+[ext_resource type="Script" uid="uid://dfyjvc7gck1s4" path="res://scripts/menu/start_button.gd" id="2_dlwdm"]
+[ext_resource type="Texture2D" uid="uid://bklt3vo0xbpoj" path="res://assets/images/guirlande2.png" id="3_rmy27"]
+[ext_resource type="Texture2D" uid="uid://cb1j23138tmew" path="res://assets/images/FumeeGif2.png" id="3_ubpei"]
+[ext_resource type="Texture2D" uid="uid://cdkl1ge1bxm6y" path="res://assets/images/flowerpot.png" id="3_xkep2"]
+[ext_resource type="Texture2D" uid="uid://bs0slocdb2biw" path="res://assets/images/guirlande.png" id="4_1mnu2"]
+[ext_resource type="Texture2D" uid="uid://dq3b0c03uplt0" path="res://assets/images/FumeeGif1.png" id="4_3phci"]
+[ext_resource type="Texture2D" uid="uid://g552ixytkwq7" path="res://assets/images/background.png" id="5_anov8"]
+[ext_resource type="Texture2D" uid="uid://cyoja3s40y0lp" path="res://assets/images/mail_999.png" id="6_2h2f1"]
+[ext_resource type="Script" uid="uid://dedepktstx2yt" path="res://scenes/popup/start_mails.gd" id="7_klxan"]
+[ext_resource type="Texture2D" uid="uid://diqtydm1so6u0" path="res://assets/images/button.jpg" id="7_ux65g"]
+[ext_resource type="PackedScene" uid="uid://bcbt61p5bxiep" path="res://scenes/QuestListNode.tscn" id="7_ytgl2"]
+[ext_resource type="Texture2D" uid="uid://d0lin4e5xvtkt" path="res://assets/images/ie.png" id="12_3phci"]
+[ext_resource type="Script" uid="uid://bw7apd83ss2ss" path="res://scripts/internet_btn.gd" id="13_h40tr"]
+
+[sub_resource type="Animation" id="Animation_diie0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraAnimation/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 323)]
+}
+
+[sub_resource type="Animation" id="Animation_u5kg4"]
+resource_name = "screen_shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraAnimation/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(576, 323), Vector2(595, 312), Vector2(557, 347), Vector2(588, 333), Vector2(591, 309), Vector2(576, 323)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqjab"]
+_data = {
+&"RESET": SubResource("Animation_diie0"),
+&"screen_shake": SubResource("Animation_u5kg4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfh83"]
+
+[sub_resource type="Animation" id="Animation_6aoi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop/Background/Mails:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.513616, 2.5136158)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DesktopAnimator/Desktop/Background/Mails:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.4820443e-09]
+}
+
+[sub_resource type="Animation" id="Animation_2pj4s"]
+resource_name = "click"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop/Background/Mails:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2.513616, 2.5136158), Vector2(2.114, 2.114), Vector2(2.514, 2.514)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DesktopAnimator/Desktop/Background/Mails:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.4820443e-09, 0.27401669256310957, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6aoi0"]
+_data = {
+&"RESET": SubResource("Animation_6aoi0"),
+&"click": SubResource("Animation_2pj4s")
+}
+
+[sub_resource type="Animation" id="Animation_x3e13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop/FumeeGif3:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3rcn1")]
+}
+
+[sub_resource type="Animation" id="Animation_h40tr"]
+resource_name = "smoke"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop/FumeeGif3:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_3rcn1"), ExtResource("4_3phci"), ExtResource("3_ubpei")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aaeoe"]
+_data = {
+&"RESET": SubResource("Animation_x3e13"),
+&"smoke": SubResource("Animation_h40tr")
+}
+
+[sub_resource type="Animation" id="Animation_xkep2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.27037728, 0.27037728)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DesktopAnimator/Desktop:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(568, 320)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DesktopAnimator/Desktop/Guirelande:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_1mnu2")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DesktopAnimator/Desktop/Background/Mails:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.513616, 2.5136158)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DesktopAnimator/Desktop/Background/Mails:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.4820443e-09]
+}
+
+[sub_resource type="Animation" id="Animation_klxan"]
+resource_name = "click_mail"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop/Background/Mails:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.513616, 2.5136158), Vector2(2.214, 2.214)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DesktopAnimator/Desktop/Background/Mails:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.4820443e-09, 0.4782202150464459]
+}
+
+[sub_resource type="Animation" id="Animation_anov8"]
+resource_name = "twinkle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop/Guirelande:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_1mnu2"), ExtResource("3_rmy27")]
+}
+
+[sub_resource type="Animation" id="Animation_xyu4v"]
+resource_name = "zoom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DesktopAnimator/Desktop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.26, 0.26), Vector2(0.45, 0.45)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DesktopAnimator/Desktop:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(568, 320), Vector2(518, 320)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1mnu2"]
+_data = {
+&"RESET": SubResource("Animation_xkep2"),
+&"click_mail": SubResource("Animation_klxan"),
+&"twinkle": SubResource("Animation_anov8"),
+&"zoom": SubResource("Animation_xyu4v")
+}
+
+[sub_resource type="Theme" id="Theme_klxan"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klxan"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pj4s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6aoi0"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rcn1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubpei"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3phci"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h40tr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3e13"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaeoe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7yjn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qpucb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h40tr"]
+size = Vector2(705.72473, 679.23315)
+
+[node name="Main" type="Node2D"]
+
+[node name="GameManager" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.24428706, 1.2934353)
+script = ExtResource("1_ubpei")
+
+[node name="CameraAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qqjab")
+}
+speed_scale = 4.0
+
+[node name="Camera2D" type="Camera2D" parent="CameraAnimation"]
+position = Vector2(576, 323)
+
+[node name="Main" type="Area2D" parent="."]
+position = Vector2(-8, -3)
+script = ExtResource("1_xyu4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main"]
+shape = SubResource("RectangleShape2D_hfh83")
+
+[node name="ButtonAnimator" type="AnimationPlayer" parent="Main"]
+libraries = {
+&"": SubResource("AnimationLibrary_6aoi0")
+}
+speed_scale = 2.026
+
+[node name="SmokeAnimator" type="AnimationPlayer" parent="Main"]
+libraries = {
+&"": SubResource("AnimationLibrary_aaeoe")
+}
+autoplay = "smoke"
+speed_scale = 1.898
+
+[node name="DesktopAnimator" type="AnimationPlayer" parent="Main"]
+libraries = {
+&"": SubResource("AnimationLibrary_1mnu2")
+}
+autoplay = "twinkle"
+speed_scale = 1.005
+
+[node name="Desktop" type="Sprite2D" parent="Main/DesktopAnimator"]
+position = Vector2(568, 320)
+scale = Vector2(0.27037728, 0.27037728)
+texture = ExtResource("1_hfh83")
+
+[node name="FumeeGif3" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
+position = Vector2(-1165.0386, 29.588287)
+scale = Vector2(1.7190655, 1.7190655)
+texture = ExtResource("2_3rcn1")
+
+[node name="Background" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
+position = Vector2(118.3532, -59.176544)
+rotation = -0.014788649
+scale = Vector2(1.201972, 1.3504019)
+texture = ExtResource("5_anov8")
+
+[node name="Mails" type="Sprite2D" parent="Main/DesktopAnimator/Desktop/Background"]
+position = Vector2(-570.75085, -284.16663)
+scale = Vector2(2.513616, 2.5136158)
+texture = ExtResource("6_2h2f1")
+
+[node name="MailBtn" type="Button" parent="Main/DesktopAnimator/Desktop/Background/Mails"]
+offset_left = -33.82003
+offset_top = -27.688238
+offset_right = -25.82003
+offset_bottom = -19.688238
+scale = Vector2(9.943655, 8.388571)
+theme = SubResource("Theme_klxan")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_klxan")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2pj4s")
+theme_override_styles/pressed = SubResource("StyleBoxLine_6aoi0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_3rcn1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ubpei")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_3phci")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h40tr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_x3e13")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_aaeoe")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_d7yjn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qpucb")
+flat = true
+script = ExtResource("7_klxan")
+
+[node name="Label2" type="Label" parent="Main/DesktopAnimator/Desktop/Background/Mails"]
+offset_left = -19.964464
+offset_top = 22.621346
+offset_right = 282.2213
+offset_bottom = 237.6213
+scale = Vector2(0.20525056, 0.21462741)
+theme_override_font_sizes/font_size = 77
+text = "mails"
+
+[node name="Browser" type="Sprite2D" parent="Main/DesktopAnimator/Desktop/Background"]
+position = Vector2(-565.25183, -59.48472)
+scale = Vector2(0.5337376, 0.5043553)
+texture = ExtResource("12_3phci")
+
+[node name="Label" type="Label" parent="Main/DesktopAnimator/Desktop/Background/Browser"]
+offset_left = -144.7183
+offset_top = 150.0065
+offset_right = 157.46748
+offset_bottom = 365.0065
+theme_override_font_sizes/font_size = 77
+text = "internet
+"
+
+[node name="InternetBtn" type="Button" parent="Main/DesktopAnimator/Desktop/Background/Browser"]
+offset_left = -187.6704
+offset_top = -165.54366
+offset_right = -179.6704
+offset_bottom = -157.54366
+scale = Vector2(48.203934, 53.822746)
+flat = true
+script = ExtResource("13_h40tr")
+
+[node name="Flowerpot" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
+position = Vector2(1353.8462, 61.538464)
+texture = ExtResource("3_xkep2")
+
+[node name="Guirelande" type="Sprite2D" parent="Main/DesktopAnimator/Desktop"]
+position = Vector2(215.38461, 61.538464)
+scale = Vector2(1.0482244, 1.0144722)
+texture = ExtResource("4_1mnu2")
+
+[node name="QuestList" parent="Main/DesktopAnimator/Desktop" instance=ExtResource("7_ytgl2")]
+position = Vector2(747.10425, 495.60388)
+rotation = -0.080512166
+scale = Vector2(1.0900041, 1.0434723)
+
+[node name="Screen" type="Area2D" parent="Main/DesktopAnimator/Desktop"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/DesktopAnimator/Desktop/Screen"]
+position = Vector2(120.18555, -59.737793)
+rotation = -0.01608396
+scale = Vector2(2.3323207, 1.5306869)
+shape = SubResource("RectangleShape2D_h40tr")
+
+[node name="StartBtn" type="Sprite2D" parent="Main/DesktopAnimator"]
+position = Vector2(602.00006, 303)
+scale = Vector2(1.8333334, 2.2857144)
+texture = ExtResource("7_ux65g")
+
+[node name="Button" type="Button" parent="Main/DesktopAnimator/StartBtn"]
+offset_left = -72.00003
+offset_top = -15.749998
+offset_right = 20.99997
+offset_bottom = 15.250002
+scale = Vector2(1.5370212, 0.9872733)
+text = "Jouer"
+script = ExtResource("2_dlwdm")

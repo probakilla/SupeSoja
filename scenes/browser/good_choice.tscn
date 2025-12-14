@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://gtv005vcsiqs"]
+
+[node name="GoodChoice" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(8.471012e-06, 0.73971415, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Bon Choix"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(8.471012e-06, 0.73971415, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Bon Choix"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

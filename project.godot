@@ -38,6 +38,8 @@ move_right={
 ]
 }
 
+BrowserGameManager="*res://scripts/browser/browser_game_manager.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

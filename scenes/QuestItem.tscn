@@ -1,0 +1,5 @@
+[gd_scene load_steps=0 format=3 uid="uid://chf4xgf5bmwea"]
+
+[node name="QueteImprimer" type="CheckBox"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+text = "Imprimer Responsablement"

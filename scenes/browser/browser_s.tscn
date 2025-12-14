@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://dka1q34xgtqt5"]
+
+[ext_resource type="Script" uid="uid://cgjjcfk8t5ouv" path="res://scripts/browser/browser.gd" id="1_iwrt6"]
+[ext_resource type="Texture2D" uid="uid://c4hisp57q4lhy" path="res://assets/images/Browser/browser.png" id="3_mtvo7"]
+[ext_resource type="Texture2D" uid="uid://p05sngnxr5y2" path="res://assets/images/Browser/block.png" id="3_ynpif"]
+[ext_resource type="Texture2D" uid="uid://o8jyysw784bb" path="res://assets/images/Browser/search_bar.jpeg" id="4_ynpif"]
+[ext_resource type="Script" uid="uid://d3b66boiuecuy" path="res://scripts/browser/browser_game_manager.gd" id="5_gwjmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwjmo"]
+size = Vector2(1140, 643)
+
+[node name="BrowserS" type="Node2D"]
+script = ExtResource("1_iwrt6")
+
+[node name="BrowserGameManager" type="Node" parent="."]
+script = ExtResource("5_gwjmo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gwjmo")
+
+[node name="Browser" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.832372, 0.8333333)
+texture = ExtResource("3_mtvo7")
+
+[node name="Block" type="Sprite2D" parent="Area2D/Browser"]
+position = Vector2(-216.85016, 120.599976)
+scale = Vector2(0.40408164, 0.270742)
+texture = ExtResource("3_ynpif")
+
+[node name="Label" type="Label" parent="Area2D/Browser/Block"]
+offset_left = -526.9868
+offset_top = -139.61621
+offset_right = 525.5001
+offset_bottom = 139.61646
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "recherche Golole"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Block" type="Sprite2D" parent="Area2D/Browser/Block"]
+position = Vector2(1082.0398, -1.3142824e-05)
+scale = Vector2(1.0000508, 1.0109481)
+texture = ExtResource("3_ynpif")
+
+[node name="Label2" type="Label" parent="Area2D/Browser/Block/Block"]
+offset_left = -526.7815
+offset_top = -142.48853
+offset_right = 525.7053
+offset_bottom = 136.74414
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "Je me sens chaceux"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SearchBar" type="Sprite2D" parent="Area2D/Browser"]
+position = Vector2(-1.8020649, 37.80002)
+scale = Vector2(1.2620212, 1.0500001)
+texture = ExtResource("4_ynpif")
+
+[node name="Label" type="Label" parent="Area2D/Browser/SearchBar"]
+offset_left = -539.0439
+offset_top = -157.14284
+offset_right = 541.42365
+offset_bottom = -25.142838
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+
+Effectuez une recherche sur le Web à l'aide de Golole."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Area2D/Browser"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -470.3426
+offset_top = 9.000046
+offset_right = 466.73846
+offset_bottom = 66.60003
+flat = true
+
+[node name="url" type="Label" parent="Area2D/Browser"]
+offset_left = -322.87247
+offset_top = -238.8
+offset_right = 585.37537
+offset_bottom = -215.8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "http://golole.com/"
+
+[node name="ScoreLabel" type="Label" parent="Area2D/Browser"]
+offset_left = -670.3733
+offset_top = -304.80002
+offset_right = -456.3733
+offset_bottom = -247.80002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Score : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="WrongChoice" type="Label" parent="Area2D/Browser"]
+visible = false
+offset_left = -569.4569
+offset_top = -387.6
+offset_right = 581.5431
+offset_bottom = 259.4
+theme_override_colors/font_color = Color(0.5660935, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Mauvais CHOIX"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="GoodChoice" type="Label" parent="Area2D/Browser"]
+visible = false
+offset_left = -577.86664
+offset_top = -392.4
+offset_right = 574.13336
+offset_bottom = 255.6
+theme_override_colors/font_color = Color(8.471012e-06, 0.73971415, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Bon Choix"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

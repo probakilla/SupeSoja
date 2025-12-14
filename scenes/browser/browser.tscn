@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8jixe8udb8hd"]
+
+[ext_resource type="Texture2D" uid="uid://c4hisp57q4lhy" path="res://assets/images/Browser/browser.png" id="1_wdqj6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tf7do"]
+
+[sub_resource type="GDScript" id="GDScript_ash11"]
+script/source = "extends Node
+
+func _ready():
+	var button = Button.new()
+	button.text = \"Click me\"
+	button.pressed.connect(_button_pressed)
+	add_child(button)
+
+func _button_pressed():
+	print(\"Hello world!\")
+"
+
+[node name="Browser" type="Sprite2D"]
+position = Vector2(1295, 1239)
+scale = Vector2(0.9968612, 0.9763778)
+texture = ExtResource("1_wdqj6")
+
+[node name="Button" type="Sprite2D" parent="."]
+position = Vector2(-1.9051867, 267.45917)
+scale = Vector2(1.0162557, 1.1992595)
+texture = SubResource("CompressedTexture2D_tf7do")
+script = SubResource("GDScript_ash11")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmhi4hcjvd5o6"]
+
+[ext_resource type="Script" uid="uid://ddl4l1xk6fla4" path="res://scripts/popup/popup_screen.gd" id="1_8w862"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl3ya"]
+
+[sub_resource type="Animation" id="Animation_d136f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/AnimationPlayer/PopupArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gl3ya"]
+resource_name = "shake"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/AnimationPlayer/PopupArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-62, 12), Vector2(74, -15), Vector2(-64, 18), Vector2(75, -19), Vector2(-44, 18), Vector2(59, -28), Vector2(-54, 10), Vector2(56, -19), Vector2(-62, 27), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8w862"]
+_data = {
+&"RESET": SubResource("Animation_d136f"),
+&"shake": SubResource("Animation_gl3ya")
+}
+
+[node name="PopupScreen" type="Node2D"]
+script = ExtResource("1_8w862")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gl3ya")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_8w862")
+}
+autoplay = "shake"
+speed_scale = 4.0
+
+[node name="PopupArea" type="Node2D" parent="Area2D/AnimationPlayer"]
