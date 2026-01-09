@@ -23,13 +23,15 @@ var right = Vector2(1, 0)
 var move_direction : Vector2
 var can_move: bool
 
-
-
 func _ready() -> void:
 	new_game()
 
 func new_game():
+	get_tree().paused = false
+	$WinPopup.hide()
+	$Game_Over.hide()
 	score = 0
+	get_tree().call_group("segments", "queue_free")
 	$Hud.get_node("ScoreLabel").text = "SCORE: " + str(score)
 	move_direction = up
 	can_move = true
@@ -50,8 +52,9 @@ func add_segment(pos):
 	add_child(SnakeSegment)
 	snake.append(SnakeSegment)
 
-func _process(delta):
+func _process(_delta):
 	move_snake()
+	win_game()
 
 func move_snake():
 	if can_move:
@@ -80,7 +83,6 @@ func game_start():
 	game_started = true
 	$MoveTimer.start()
 
-
 func _on_move_timer_timeout():
 	can_move = true
 	old_data = [] + snake_data
@@ -102,9 +104,6 @@ func check_self_eaten():
 		if snake_data[0] == snake_data[i]:
 			end_game()
 
-func end_game():
-	pass
-
 func check_food_eaten():
 	if snake_data[0] == food_pos:
 		score += 1
@@ -121,3 +120,22 @@ func move_food():
 				regen_food = true
 	$Food.position = (food_pos * cells_size) + Vector2(0, cells_size)
 	regen_food = true
+
+func win_game():
+	if (score == 10):
+		$WinPopup.show()
+		$MoveTimer.stop()
+		game_started = false
+		get_tree().paused = true
+
+func end_game():
+	$Game_Over.show()
+	$MoveTimer.stop()
+	game_started = false
+	get_tree().paused = true
+
+func _on_game_over_button_restart() -> void:
+	new_game()
+
+func _on_win_popup_quit() -> void:
+	new_game()
